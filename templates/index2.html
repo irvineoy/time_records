@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charst="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <h1 style="background-color: yellow;color:black;">record my timestamp of part-time job</h1>
+    <form action="/index/" method="post">
+	<div>	
+	<label>Month</label>
+	<input type="text" name="month"/>
+	</div>
+	<div>	
+	<label>day</label>
+	<input type="text" name="day"/>
+	</div>
+	<div>	
+	<label>beginTime</label>
+	<input type="text" name="beginTime"/>
+	</div>
+	<div>	
+	<label>endTime</label>
+	<input type="text" name="endTime"/>
+	</div>
+	<div>	
+	<label>submit</label>
+	<input type="submit" name="submit"/>
+	</div>
+    </form>
+    <hr />
+    <table border='1'>
+	<thead>
+	    <th>month</th>
+	    <th>day</th>
+	    <th>beginTime</th>
+	    <th>endTime</th>
+	    <th>timeLength</th>
+	</thead>
+	<tbody>
+	    {% for line in data %}
+		<tr>
+		    <td>{{line.month}}</td>
+		    <td>{{line.day}}</td>
+		    <td>{{line.beginTime}}</td>
+		    <td>{{line.endTime}}</td>
+		    <td>{{line.timeLength}}</td>
+		</tr>
+	    {% endfor %}
+	</tbody>
+    </table>
+    <h1>The sum of time is: {{ sumTime }}</h1>
+    <h1>The total money is: {{ totalMoney }}</h1>
+</body>
